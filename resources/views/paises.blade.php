@@ -15,7 +15,7 @@
         <h1>Lista de Paises</h1>
       </header>
       <table class="table table-striped w-50 m-auto">
-          <thead>
+          <thead class="text-center">
               <tr>
                   <th>
                       BANDERA
@@ -28,7 +28,7 @@
                   </th>
                   <th>MONEDA</th>
                   <th>POBLACION</th>
-                  <th>CIUDADES</th>
+                  <th colspan="3">CIUDADES</th>
               </tr>
           </thead>
           <tbody>
