@@ -8,21 +8,23 @@
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
   <body>
       <header class="text-center ">
         <h1>Lista de Paises</h1>
       </header>
-      <table class="table table-dark table-striped">
+      <table class="table table-striped w-50 m-auto">
           <thead>
               <tr>
+                  <th>
+                      BANDERA
+                  </th>
                   <th>
                       PAÍS
                   </th>
                   <th>
-                      CAPITAL:
+                      CAPITAL
                   </th>
                   <th>MONEDA</th>
                   <th>POBLACION</th>
@@ -32,22 +34,29 @@
           <tbody>
               @foreach($paises as $pais => $infopais)
                 <tr>
-                    <td>
+                    <td >
+                        <img src="{{ $infopais["BANDERA"] }}" alt="" width="80">
+                    </td>
+                    <td class="text-success">
                         {{ $pais }}
                     </td>
-                    <td>
+                    <td class="text-danger">
                         {{ $infopais["CAPITAL"] }}
                     </td>
-                    <td>
+                    <td class="text-warning">
                         {{ $infopais["MONEDA"] }}
                     </td>
-                    <td>
+                    <td class="text-info">
                         {{ $infopais["POBLACION"] }}
                     </td>
-                    @foreach ($infopais["Ciudad"] as $clave => $valor)
-                    <td>{{$valor}}</td>
+
+                    @foreach ($infopais["CIUDAD"] as $clave => $valor)
+
+                    <td>
+                        <p class="bg-info text-light rounded text-center font-weigth-bold">{{$valor}}</p>
+                        @endforeach
+                    </td>
                         
-                    @endforeach
 
                 </tr>
               @endforeach
